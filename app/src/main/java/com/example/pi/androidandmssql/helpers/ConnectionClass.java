@@ -15,11 +15,11 @@ import java.sql.SQLException;
  */
 
 public class ConnectionClass {
-    String ip = "192.168.0.100"; // The IP address or server name of your PC or server where your database is stored.
+    String ip = "172.16.10.245/MM/SQLEXPRESS:1433"; // The IP address or server name of your PC or server where your database is stored.
     String  classs = "net.sourceforge.jtds.jdbc.Driver";
-    String db = "Andro";
-    String un = "hitesh"; // Username
-    String password = "789";  // User password
+    private String db = "Andro";
+    private String un = "MM"; // Username
+    private String password = "jaliwa";  // User password
 
 
     // This will return the Connection object for connecting with the server.
@@ -33,12 +33,13 @@ public class ConnectionClass {
         try{
             Class.forName(classs);
             ConnURL = "jdbc:jtds:sqlserver://"+ip+";"
-                    + "databaseName=" + db + ";user=" + un+"password="
+                    + "databaseName=" + db + ";user=" + un+";password="
                     + password + ";";
+            Log.e("mY eRROR: ", "The username is: " +  un);
             conn = DriverManager.getConnection(ConnURL);
 
         }catch (SQLException se){
-            Log.e("ERRO", se.getMessage());
+            Log.e("ERRO", se.getMessage() +"====");
         }catch (ClassNotFoundException e) {
             Log.e("ERRO", e.getMessage());
         } catch (Exception e) {
