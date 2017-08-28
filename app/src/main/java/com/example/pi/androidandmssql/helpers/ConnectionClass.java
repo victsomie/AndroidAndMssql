@@ -18,8 +18,8 @@ public class ConnectionClass {
     String ip = "172.16.10.245/MM/SQLEXPRESS:1433"; // The IP address or server name of your PC or server where your database is stored.
     String  classs = "net.sourceforge.jtds.jdbc.Driver";
     private String db = "Andro";
-    private String un = "MM"; // Username
-    private String password = "jaliwa";  // User password
+    private String un = ""; // Username for your machine
+    private String password = "";  // User password for your machine
 
 
     // This will return the Connection object for connecting with the server.
